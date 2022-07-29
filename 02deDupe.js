@@ -27,16 +27,29 @@ function deDupFilter(nums){
 
 // got loop working, returns in correct order
 function deDeDup(nums){
-  let newNums= nums;
-  console.log("new nums: "+newNums);
   for(let i=0;i<nums.length;i++){
-    let num1=nums[i];
     for(let j=0;j<nums.length;j++){
-      console.log("evalutator: "+num1+" current num:"+nums[j]);
       if(nums[j]===nums[i] && j != i){
-        newNums.splice(j,1);
+        nums.splice(j,1);
       } 
     }
   }
   return nums;
+}
+
+function recurseDeDupe(nums){
+  if(nums.length === 0){
+    return "";
+  } else {
+    final = [];
+    let answer=nums.shift();
+    dupPosition=nums.indexOf(answer);
+    if(dupPosition != -1){
+      nums.splice(dupPosition,1);
+      nums.push(answer);
+    } else{
+      final.push(answer+", ");
+    }
+    return final+ recurseDeDupe(nums);
+  }
 }
