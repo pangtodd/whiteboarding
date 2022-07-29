@@ -25,18 +25,18 @@ function deDupFilter(nums){
 //indexOf findes the first position of the item & returns it. Any duplicates (ie, an item whose position DOESN'T match the first instance's position) is removed/filtered out.
 
 
-// wanted to do it with loops, doesn't quite work
+// got loop working, returns in correct order
 function deDeDup(nums){
   let newNums= nums;
+  console.log("new nums: "+newNums);
   for(let i=0;i<nums.length;i++){
     let num1=nums[i];
     for(let j=0;j<nums.length;j++){
-      if(nums[j]===num1){
+      console.log("evalutator: "+num1+" current num:"+nums[j]);
+      if(nums[j]===nums[i] && j != i){
         newNums.splice(j,1);
-      } else{
-        console.log("newNums "+ newNums);
-      }
+      } 
     }
   }
-  return newNums;
+  return nums;
 }
