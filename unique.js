@@ -9,3 +9,20 @@
 // Input: "copyright"
 
 // Output: true
+
+function unique(string){
+  let score=0;
+  for(let i = 0;i<string.length;i++){
+    let checker=string[i];
+    for(let j = 0;j<string.length;j++){
+      if(string[j]===checker){
+        score++;
+      }
+    }
+  }
+  if(score>string.length){
+    return false;
+  }else{
+    return true;
+  }
+}
