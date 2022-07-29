@@ -20,3 +20,21 @@ function noSpacey(stringy){
   }
   console.log(newStringy)
 }
+//recursion not working
+function recurseNoSpacey(string){
+  let stringArray= string.split("");
+  let answer ="";
+  if(stringArray.length === 0){
+    return "";
+  } else {
+    console.log("yo "+stringArray[0]);
+    if(stringArray[stringArray[0]]===" "){
+      popped=stringArray.shift();
+      console.log(popped);
+      answer="%20";
+    } else{
+      answer=stringArray.shift();
+    }
+    return recurseNoSpacey(stringArray.join("")) + answer
+  }
+}
