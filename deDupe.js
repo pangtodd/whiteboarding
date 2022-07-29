@@ -7,7 +7,6 @@
 // Output: [7, 9, "hi", 12, 53]
 
 // this works, but not in the same order.
-
 function deDup(nums){
   let sortedNums=nums.sort();
   for(let i=0;i<nums.length;i++){
