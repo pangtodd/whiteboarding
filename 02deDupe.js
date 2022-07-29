@@ -17,6 +17,13 @@ function deDup(nums){
   }  
 }
 
+//function using filter
+function deDupFilter(nums){
+  return nums.filter((item, index) => nums.indexOf(item) === index);
+  console.log(nums);
+}
+//indexOf findes the first position of the item & returns it. Any duplicates (ie, an item whose position DOESN'T match the first instance's position) is removed/filtered out.
+
 
 // wanted to do it with loops, doesn't quite work
 function deDeDup(nums){

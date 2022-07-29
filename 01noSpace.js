@@ -22,19 +22,18 @@ function noSpacey(stringy){
 }
 //recursion not working
 function recurseNoSpacey(string){
-  let stringArray= string.split("");
   let answer ="";
-  if(stringArray.length === 0){
+  let rev
+  if(string.length === 0){
     return "";
   } else {
-    console.log("yo "+stringArray[0]);
-    if(stringArray[stringArray[0]]===" "){
-      popped=stringArray.shift();
-      console.log(popped);
+    if(string[0]===" "){
       answer="%20";
+      string=string.slice(1)
     } else{
-      answer=stringArray.shift();
+      answer=string[0];
+      string=string.slice(1)
     }
-    return recurseNoSpacey(stringArray.join("")) + answer
+    return answer + recurseNoSpacey(string);
   }
 }
