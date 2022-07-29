@@ -5,3 +5,22 @@
 // Input: "aaabccdddda"
 
 // Output: "3ab2c4da"
+
+function compress(string){
+  let counter=1;
+  let answer="";
+  for(let i=0; i<string.length; i++){
+    if(string[i+1] && string[i]===string[i+1]){
+      counter = counter+1;
+    }else{
+      if(counter===1){
+        answer=answer+string[i];
+      }
+      else{
+        answer=answer+(counter)+string[i];
+        counter=1;
+      }
+    }
+  }
+  return answer;
+}
