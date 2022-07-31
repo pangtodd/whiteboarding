@@ -1,0 +1,51 @@
+input: string= "aaabccdddda"
+output: "3ab2c4da"
+
+loop through
+counter of duplicates
+return final count + charater
+add that to answer string
+
+function compression(string){
+  let counter = 1;
+  let answer="";
+  for(let i=0; i<string.length; i++){
+    if(string[i+1] && string[i]===string[i+1]){
+      counter=counter +1;
+    } else{
+      if(counter===1){
+        answer=answer+string[i];
+      }
+      else{
+        answer=answer+counter+string[i];
+        counter=1;
+      }
+    }
+  }
+  return answer;
+}
+
+function recuseCompress(string){
+  if(string.length===""){
+    return "";
+  } else {
+    let numberPre = parseInt(string[0]);
+    let newString="";
+    let answer="";
+    if(Number.isInteger(numberPre)&& string[2]){
+      numberPre=numberPre+1;
+      newString = numberPre.toString()+ string.slice(2);
+      answer = "";
+    } else {
+      answer = string[0] + string[1];
+    } else if {
+      (string[1] && string][0]===string[1] {
+      newString = "2" +string.slice(1)
+      answer = "";
+  } else {
+    answer=string[0];
+    newString = string.slice(1);
+  }
+  return answer + recurseCompress(newString);
+  }
+}

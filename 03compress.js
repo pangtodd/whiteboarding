@@ -6,7 +6,13 @@
 
 // Output: "3ab2c4da"
 
-function compress(string){
+
+//set counter to 1 b/c the first number we want to see in the output is a 2 (ie, we don't want to see 1a if there is just one a)
+//set an empty string that will become our answer
+//set up a loop to iterate through each char of the string
+//if the string position i+1 exists  AND if position i and i+1 are the same, the counter goes up by 1. loop starts over.
+//BUT if not, we have another else if: If the counter ===1, that means there is 
+function compression(string){
   let counter=1;
   let answer="";
   for(let i=0; i<string.length; i++){
@@ -27,13 +33,12 @@ function compress(string){
 
 // Input: "aaabccdddda"
 // Output: "3ab2c4da"
-//recursive not working yet.
+//recursive working, but not if numbers are used (ie, "444" will return 44 b/c of how I set up the counting).
 
 function recurseCompress(string){
   if(string === ""){
     return "";
   } else {
-    console.log("string first digit="+string);
     let numberPre= parseInt(string[0]);
     let newString="";
     let answer="";
